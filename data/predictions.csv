@@ -1,0 +1,9 @@
+Customer_Age,Gender,Dependent_count,Education_Level,Marital_Status,Income_Category,Card_Category,Months_on_book,Total_Relationship_Count,Months_Inactive_12_mon,Contacts_Count_12_mon,Credit_Limit,Total_Revolving_Bal,Avg_Open_To_Buy,Total_Amt_Chng_Q4_Q1,Total_Trans_Amt,Total_Trans_Ct,Total_Ct_Chng_Q4_Q1,Avg_Utilization_Ratio,Churn_Probability,Predicted_Label,Recommended_Action
+48,F,3,Uneducated,Single,Less than $40K,Blue,39,4,3,4,2991.0,1508,1483.0,0.703,3734,64,0.882,0.504,0.004,0,No action needed
+59,M,1,Uneducated,Single,Less than $40K,Blue,53,5,5,4,2192.0,1569,623.0,0.706,4010,79,0.717,0.716,0.008,0,No action needed
+37,F,2,Graduate,Divorced,Less than $40K,Blue,36,4,3,3,1734.0,987,747.0,0.879,4727,67,0.914,0.569,0.002,0,No action needed
+47,M,3,Doctorate,Divorced,$40K - $60K,Blue,36,4,2,3,4786.0,1516,3270.0,0.94,4973,74,0.85,0.317,0.038,0,No action needed
+42,M,3,Unknown,Single,$80K - $120K,Blue,33,3,3,2,3714.0,2170,1544.0,0.524,1454,35,0.522,0.584,0.169,0,No action needed
+65,M,1,Graduate,Single,Less than $40K,Blue,56,5,3,2,7636.0,0,7636.0,0.801,3880,67,0.811,0.0,0.047,0,No action needed
+52,F,3,Unknown,Single,Unknown,Blue,36,3,1,2,10273.0,1657,8616.0,0.71,3778,70,0.591,0.161,0.003,0,No action needed
+58,F,2,High School,Divorced,Unknown,Gold,36,5,4,3,34516.0,1864,32652.0,0.664,3595,52,0.733,0.054,0.22,0,No action needed

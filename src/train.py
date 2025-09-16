@@ -200,7 +200,7 @@ def main(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--data", type=str, default="data/raw/bank_churn_cleaned.csv", help="Path to cleaned CSV")
+    parser.add_argument("--data", type=str, default="D:\\AI Hackathon\\data\\bank_churn_cleaned.csv", help="Path to cleaned CSV")
     parser.add_argument("--outdir", type=str, default="outputs", help="Folder to save metrics/plots/transformed")
     parser.add_argument("--modeldir", type=str, default="models", help="Folder to save model pickle")
     parser.add_argument("--test_size", type=float, default=0.20)
