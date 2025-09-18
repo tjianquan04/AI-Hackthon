@@ -8,4 +8,13 @@ Customer_Age,Gender,Dependent_count,Education_Level,Marital_Status,Income_Catego
 52,F,3,Unknown,Single,Unknown,Blue,36,3,1,2,10273.0,1657,8616.0,0.71,3778,70,0.591,0.161
 58,F,2,High School,Divorced,Unknown,Gold,36,5,4,3,34516.0,1864,32652.0,0.664,3595,52,0.733,0.054
 82,M,0,Uneducated,Divorced,Less than $40K,Blue,35,2,6,6,1200,1000,200,0.2,500,15,0.3,0.85
-
+33,F,0,Graduate,Single,$60K - $80K,Blue,28,2,5,1,1500,1300,200,0.45,900,12,0.21,0.87
+70,M,2,Doctorate,Married,$120K+,Blue,60,6,2,1,5000,400,4600,0.35,800,20,0.15,0.08
+41,F,3,College,Married,Less than $40K,Gold,48,5,1,5,12000,8000,4000,0.95,5500,45,0.62,0.67
+55,M,4,High School,Divorced,$40K - $60K,Silver,42,3,6,0,4000,0,4000,0.20,600,10,0.12,0.00
+29,F,1,Graduate,Single,$80K - $120K,Blue,25,3,2,4,8000,1500,6500,0.70,2500,25,0.40,0.19
+63,F,2,Unknown,Married,Less than $40K,Blue,50,4,4,3,3500,2800,700,0.65,1200,18,0.33,0.80
+45,M,5,Graduate,Married,$40K - $60K,Platinum,40,6,3,2,15000,1000,14000,0.58,9500,85,0.95,0.07
+39,F,2,Graduate,Single,Less than $40K,Blue,32,3,2,3,2500,1750,750,0.55,1300,22,0.35,0.70
+61,M,0,Doctorate,Married,$80K - $120K,Silver,54,5,1,2,11000,900,10100,0.48,7200,60,0.77,0.09
+47,F,1,High School,Divorced,Less than $40K,Blue,38,2,5,4,4200,3100,1100,0.82,2100,33,0.41,0.74

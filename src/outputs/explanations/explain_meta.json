@@ -1,0 +1,7 @@
+{
+  "model_path": "D:\\AI Hackathon\\models\\best_model.pkl",
+  "data_path": "D:\\AI Hackathon\\data\\new_customers.csv",
+  "num_rows": 19,
+  "num_features_transformed": 37,
+  "top_k": 3
+}
