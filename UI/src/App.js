@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Sidebar from './components/Sidebar';
 import Dashboard from './components/Dashboard';
 import CustomerListView from './components/CustomerListView';
+import PredictView from './components/PredictView';
 
 function App() {
   const [activeView, setActiveView] = useState('dashboard');
@@ -13,6 +14,8 @@ function App() {
         return <Dashboard />;
       case 'customers':
         return <CustomerListView />;
+      case 'predict':
+        return <PredictView />;
       default:
         return <Dashboard />;
     }

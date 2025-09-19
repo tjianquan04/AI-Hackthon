@@ -14,6 +14,12 @@ const Sidebar = ({ activeView, setActiveView, isOpen, setIsOpen }) => {
       name: 'Customer List',
       icon: Users,
       description: 'All Customers'
+    },
+    {
+      id: 'predict',
+      name: 'Predict New Churn',
+      icon: BarChart3,
+      description: 'Model Predictions with SHAP'
     }
   ];
 

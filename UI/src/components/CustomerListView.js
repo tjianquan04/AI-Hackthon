@@ -1,9 +1,25 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { Search, Filter, Download, Eye, AlertTriangle, User } from 'lucide-react';
 import { generateCustomerData, calculateChurnRisk, getRiskLevel, formatCurrency } from '../services/customerData';
 
 const CustomerListView = () => {
-  const [customers] = useState(() => generateCustomerData());
+  const [customers, setCustomers] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    let mounted = true;
+    (async () => {
+      try {
+        const data = await generateCustomerData();
+        if (mounted) setCustomers(Array.isArray(data) ? data : []);
+      } catch (e) {
+        if (mounted) setCustomers([]);
+      } finally {
+        if (mounted) setLoading(false);
+      }
+    })();
+    return () => { mounted = false; };
+  }, []);
   const [searchTerm, setSearchTerm] = useState('');
   const [filterRisk, setFilterRisk] = useState('all');
   const [filterStatus, setFilterStatus] = useState('all');
@@ -12,7 +28,7 @@ const CustomerListView = () => {
 
   // Process customers with risk calculation
   const processedCustomers = useMemo(() => {
-    return customers.map(customer => ({
+    return (customers || []).map(customer => ({
       ...customer,
       churnRisk: calculateChurnRisk(customer),
       riskLevel: getRiskLevel(calculateChurnRisk(customer))
@@ -22,9 +38,12 @@ const CustomerListView = () => {
   // Filter and search customers
   const filteredCustomers = useMemo(() => {
     return processedCustomers.filter(customer => {
-      const matchesSearch = customer.CLIENTNUM.toString().includes(searchTerm) ||
-                          customer.Income_Category.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                          customer.Education_Level.toLowerCase().includes(searchTerm.toLowerCase());
+      const matchesSearch = String(customer.CLIENTNUM ?? '')
+                              .includes(searchTerm) ||
+                            String(customer.Income_Category ?? '')
+                              .toLowerCase().includes(searchTerm.toLowerCase()) ||
+                            String(customer.Education_Level ?? '')
+                              .toLowerCase().includes(searchTerm.toLowerCase());
       
       const matchesRiskFilter = filterRisk === 'all' || 
                                (filterRisk === 'low' && customer.churnRisk <= 20) ||
@@ -32,7 +51,8 @@ const CustomerListView = () => {
                                (filterRisk === 'high' && customer.churnRisk > 50);
       
       const matchesStatusFilter = filterStatus === 'all' || 
-                                 customer.Attrition_Flag.toLowerCase().includes(filterStatus.toLowerCase());
+                                 String(customer.Attrition_Flag ?? '')
+                                   .toLowerCase().includes(filterStatus.toLowerCase());
       
       return matchesSearch && matchesRiskFilter && matchesStatusFilter;
     });
@@ -59,6 +79,14 @@ const CustomerListView = () => {
       churnRate: ((attrited / total) * 100).toFixed(1)
     };
   }, [filteredCustomers]);
+
+  if (loading) {
+    return (
+      <div className="p-6 pt-20">
+        <div className="text-gray-600">Loading customers…</div>
+      </div>
+    );
+  }
 
   return (
     <div className="p-6 pt-20">
