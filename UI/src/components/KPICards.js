@@ -4,9 +4,9 @@ import { dashboardData } from '../services/dashboardData';
 
 const KPICard = ({ title, value, subtitle, icon: Icon, trend, trendValue, color, gradient }) => {
   return (
-    <div className={`relative overflow-hidden rounded-2xl shadow-xl border border-white/20 p-8 hover:shadow-2xl transition-all duration-500 hover:scale-105 ${gradient || 'bg-white/80 backdrop-blur-sm'}`}>
+    <div className={`relative overflow-hidden rounded-2xl shadow-xl border border-slate-800 p-8 hover:shadow-2xl transition-all duration-500 hover:scale-105 ${gradient || 'bg-slate-900/70 backdrop-blur-sm'}`}>
       {/* Background Pattern */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent"></div>
       
       <div className="relative">
         <div className="flex items-center justify-between mb-6">
@@ -15,7 +15,7 @@ const KPICard = ({ title, value, subtitle, icon: Icon, trend, trendValue, color,
           </div>
           {trend && (
             <div className={`flex items-center px-3 py-2 rounded-full text-sm font-medium ${
-              trend === 'up' ? 'text-red-700 bg-red-100' : 'text-green-700 bg-green-100'
+              trend === 'up' ? 'text-red-300 bg-red-900/30' : 'text-green-300 bg-green-900/30'
             }`}>
               {trend === 'up' ? <TrendingUp className="w-4 h-4 mr-1" /> : <TrendingDown className="w-4 h-4 mr-1" />}
               {trendValue}
@@ -24,9 +24,9 @@ const KPICard = ({ title, value, subtitle, icon: Icon, trend, trendValue, color,
         </div>
         
         <div>
-          <div className="text-4xl font-bold text-gray-900 mb-2 tracking-tight">{value}</div>
-          <div className="text-lg font-semibold text-gray-700 mb-1">{title}</div>
-          {subtitle && <div className="text-sm text-gray-600 font-medium">{subtitle}</div>}
+          <div className="text-4xl font-bold text-slate-100 mb-2 tracking-tight">{value}</div>
+          <div className="text-lg font-semibold text-slate-300 mb-1">{title}</div>
+          {subtitle && <div className="text-sm text-slate-400 font-medium">{subtitle}</div>}
         </div>
       </div>
     </div>
@@ -45,8 +45,8 @@ const KPICards = () => {
     return (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {[1, 2, 3, 4].map(i => (
-          <div key={i} className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 animate-pulse">
-            <div className="w-full h-20 bg-gray-200 rounded"></div>
+          <div key={i} className="bg-slate-900/60 rounded-lg shadow-sm border border-slate-800 p-6 animate-pulse">
+            <div className="w-full h-20 bg-slate-800 rounded"></div>
           </div>
         ))}
       </div>
@@ -61,7 +61,7 @@ const KPICards = () => {
         subtitle={`Avg Age: ${metrics.avgCustomerAge} years`}
         icon={Users}
         color="bg-gradient-to-r from-blue-500 to-blue-600"
-        gradient="bg-gradient-to-br from-blue-50 to-indigo-100"
+        gradient="bg-gradient-to-br from-slate-900/70 to-indigo-900/30"
       />
       <KPICard
         title="Churned Customers"
@@ -69,7 +69,7 @@ const KPICards = () => {
         subtitle="Lost customers"
         icon={AlertTriangle}
         color="bg-gradient-to-r from-red-500 to-red-600"
-        gradient="bg-gradient-to-br from-red-50 to-pink-100"
+        gradient="bg-gradient-to-br from-slate-900/70 to-rose-900/30"
         trend="up"
         trendValue={`${metrics.churnRate}%`}
       />
@@ -79,7 +79,7 @@ const KPICards = () => {
         subtitle={`${metrics.retentionRate}% retained`}
         icon={TrendingDown}
         color="bg-gradient-to-r from-orange-500 to-red-500"
-        gradient="bg-gradient-to-br from-orange-50 to-red-100"
+        gradient="bg-gradient-to-br from-slate-900/70 to-amber-900/30"
         trend="up"
         trendValue="Above target"
       />
@@ -89,7 +89,7 @@ const KPICards = () => {
         subtitle="Requiring attention"
         icon={Shield}
         color="bg-gradient-to-r from-yellow-500 to-orange-500"
-        gradient="bg-gradient-to-br from-yellow-50 to-orange-100"
+        gradient="bg-gradient-to-br from-slate-900/70 to-orange-900/30"
         trend="up"
         trendValue="Priority"
       />

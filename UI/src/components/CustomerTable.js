@@ -34,8 +34,8 @@ const CustomerTable = () => {
   return (
     <div className="p-6">
       <div className="flex justify-between items-center mb-6">
-        <h3 className="text-lg font-semibold text-gray-900">Customer Details</h3>
-        <div className="text-sm text-gray-500">
+        <h3 className="text-lg font-semibold text-slate-100">Customer Details</h3>
+        <div className="text-sm text-slate-400">
           Showing {customers.length} customers
         </div>
       </div>
@@ -43,40 +43,40 @@ const CustomerTable = () => {
       <div className="overflow-x-auto">
         <table className="min-w-full">
           <thead>
-            <tr className="border-b border-gray-200 bg-gray-50">
-              <th className="text-left py-3 px-4 text-xs font-medium text-gray-500 uppercase tracking-wider">
+            <tr className="border-b border-slate-800 bg-slate-900/60">
+              <th className="text-left py-3 px-4 text-xs font-medium text-slate-400 uppercase tracking-wider">
                 ID
               </th>
-              <th className="text-left py-3 px-4 text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th className="text-left py-3 px-4 text-xs font-medium text-slate-400 uppercase tracking-wider">
                 Name
               </th>
-              <th className="text-left py-3 px-4 text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th className="text-left py-3 px-4 text-xs font-medium text-slate-400 uppercase tracking-wider">
                 Gender
               </th>
-              <th className="text-left py-3 px-4 text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th className="text-left py-3 px-4 text-xs font-medium text-slate-400 uppercase tracking-wider">
                 Churn Risk
               </th>
-              <th className="text-left py-3 px-4 text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th className="text-left py-3 px-4 text-xs font-medium text-slate-400 uppercase tracking-wider">
                 Spending
               </th>
-              <th className="text-left py-3 px-4 text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th className="text-left py-3 px-4 text-xs font-medium text-slate-400 uppercase tracking-wider">
                 Actions
               </th>
             </tr>
           </thead>
-          <tbody className="bg-white divide-y divide-gray-200">
+          <tbody className="bg-slate-900/40 divide-y divide-slate-800">
             {customers.map((customer) => (
-              <tr key={customer.id} className="hover:bg-gray-50">
-                <td className="py-4 px-4 text-sm text-gray-900 font-medium">
+              <tr key={customer.id} className="hover:bg-slate-900/60">
+                <td className="py-4 px-4 text-sm text-slate-100 font-medium">
                   {customer.id}
                 </td>
-                <td className="py-4 px-4 text-sm text-gray-900">
+                <td className="py-4 px-4 text-sm text-slate-100">
                   <div className="flex items-center">
                     <span className="mr-2">{getGenderIcon(customer.gender)}</span>
                     {customer.name}
                   </div>
                 </td>
-                <td className="py-4 px-4 text-sm text-gray-900">
+                <td className="py-4 px-4 text-sm text-slate-100">
                   {customer.gender}
                 </td>
                 <td className="py-4 px-4">
@@ -84,15 +84,15 @@ const CustomerTable = () => {
                     {customer.churnRisk}
                   </span>
                 </td>
-                <td className="py-4 px-4 text-sm text-gray-900 font-semibold">
+                <td className="py-4 px-4 text-sm text-slate-100 font-semibold">
                   {customer.spending}
                 </td>
                 <td className="py-4 px-4 text-sm">
                   <div className="flex space-x-2">
-                    <button className="text-blue-600 hover:text-blue-800 text-xs bg-blue-100 px-2 py-1 rounded">
+                    <button className="text-blue-300 hover:text-white text-xs bg-blue-900/30 border border-blue-800 px-2 py-1 rounded">
                       View
                     </button>
-                    <button className="text-green-600 hover:text-green-800 text-xs bg-green-100 px-2 py-1 rounded">
+                    <button className="text-green-300 hover:text-white text-xs bg-green-900/30 border border-green-800 px-2 py-1 rounded">
                       Retain
                     </button>
                   </div>
@@ -105,17 +105,17 @@ const CustomerTable = () => {
 
       {/* Pagination */}
       <div className="flex items-center justify-between mt-6">
-        <div className="text-sm text-gray-500">
+        <div className="text-sm text-slate-400">
           Showing 1 to {customers.length} of {customers.length} results
         </div>
         <div className="flex space-x-2">
-          <button className="px-3 py-1 text-sm bg-gray-100 text-gray-600 rounded hover:bg-gray-200">
+          <button className="px-3 py-1 text-sm bg-slate-900/40 text-slate-300 border border-slate-800 rounded hover:bg-slate-900">
             Previous
           </button>
-          <button className="px-3 py-1 text-sm bg-blue-500 text-white rounded hover:bg-blue-600">
+          <button className="px-3 py-1 text-sm bg-blue-600 text-white rounded hover:bg-blue-700">
             1
           </button>
-          <button className="px-3 py-1 text-sm bg-gray-100 text-gray-600 rounded hover:bg-gray-200">
+          <button className="px-3 py-1 text-sm bg-slate-900/40 text-slate-300 border border-slate-800 rounded hover:bg-slate-900">
             Next
           </button>
         </div>

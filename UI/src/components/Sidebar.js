@@ -29,12 +29,12 @@ const Sidebar = ({ activeView, setActiveView, isOpen, setIsOpen }) => {
       <div className="fixed top-4 left-4 z-50">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="p-3 rounded-lg bg-white shadow-lg border border-gray-200 hover:bg-gray-50 hover:shadow-xl transition-all duration-200 transform hover:scale-105"
+          className="p-3 rounded-lg bg-slate-800/80 backdrop-blur border border-slate-700 hover:bg-slate-800 hover:shadow-xl transition-all duration-200 transform hover:scale-105"
         >
           {isOpen ? (
-            <X className="w-5 h-5 text-gray-700 transition-transform duration-200" />
+            <X className="w-5 h-5 text-slate-200 transition-transform duration-200" />
           ) : (
-            <Menu className="w-5 h-5 text-gray-700 transition-transform duration-200" />
+            <Menu className="w-5 h-5 text-slate-200 transition-transform duration-200" />
           )}
         </button>
       </div>
@@ -42,14 +42,14 @@ const Sidebar = ({ activeView, setActiveView, isOpen, setIsOpen }) => {
       {/* Overlay */}
       {isOpen && (
         <div 
-          className="fixed inset-0 bg-black bg-opacity-50 z-40"
+          className="fixed inset-0 bg-black/60 z-40"
           onClick={() => setIsOpen(false)}
         />
       )}
 
       {/* Sidebar */}
       <div className={`
-        fixed top-0 left-0 h-full bg-white shadow-xl border-r border-gray-200 z-40
+        fixed top-0 left-0 h-full bg-slate-900/95 backdrop-blur shadow-2xl border-r border-slate-800 z-40
         transform transition-transform duration-300 ease-in-out
         ${isOpen ? 'translate-x-0' : '-translate-x-full'}
         w-64
@@ -57,8 +57,8 @@ const Sidebar = ({ activeView, setActiveView, isOpen, setIsOpen }) => {
         <div className="p-6">
           {/* Logo/Title */}
           <div className="mb-8">
-            <h2 className="text-xl font-bold text-gray-900">Churn Analytics</h2>
-            <p className="text-sm text-gray-600">Customer Intelligence</p>
+            <h2 className="text-xl font-bold text-slate-100">Churn Analytics</h2>
+            <p className="text-sm text-slate-400">Customer Intelligence</p>
           </div>
 
           {/* Navigation Menu */}
@@ -78,15 +78,15 @@ const Sidebar = ({ activeView, setActiveView, isOpen, setIsOpen }) => {
                     w-full flex items-center px-4 py-3 rounded-lg text-left
                     transition-colors duration-200
                     ${isActive 
-                      ? 'bg-blue-50 text-blue-700 border border-blue-200' 
-                      : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'
+                      ? 'bg-blue-500/15 text-blue-300 border border-blue-500/30' 
+                      : 'text-slate-300 hover:bg-slate-800 hover:text-white'
                     }
                   `}
                 >
-                  <Icon className={`w-5 h-5 mr-3 ${isActive ? 'text-blue-600' : 'text-gray-500'}`} />
+                  <Icon className={`w-5 h-5 mr-3 ${isActive ? 'text-blue-400' : 'text-slate-400'}`} />
                   <div>
-                    <div className="font-medium">{item.name}</div>
-                    <div className="text-xs text-gray-500">{item.description}</div>
+                    <div className="font-medium text-slate-100">{item.name}</div>
+                    <div className="text-xs text-slate-400">{item.description}</div>
                   </div>
                 </button>
               );
@@ -94,20 +94,20 @@ const Sidebar = ({ activeView, setActiveView, isOpen, setIsOpen }) => {
           </nav>
 
           {/* Stats Summary */}
-          <div className="mt-8 p-4 bg-gray-50 rounded-lg">
-            <h3 className="text-sm font-medium text-gray-900 mb-2">Quick Stats</h3>
+          <div className="mt-8 p-4 bg-slate-800/70 border border-slate-700 rounded-lg">
+            <h3 className="text-sm font-medium text-slate-100 mb-2">Quick Stats</h3>
             <div className="space-y-2 text-sm">
               <div className="flex justify-between">
-                <span className="text-gray-600">Total Customers</span>
-                <span className="font-medium">10,127</span>
+                <span className="text-slate-400">Total Customers</span>
+                <span className="font-medium text-slate-100">10,127</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-600">At Risk</span>
-                <span className="font-medium text-red-600">1,627</span>
+                <span className="text-slate-400">At Risk</span>
+                <span className="font-medium text-red-400">1,627</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-600">Retention Rate</span>
-                <span className="font-medium text-green-600">83.9%</span>
+                <span className="text-slate-400">Retention Rate</span>
+                <span className="font-medium text-green-400">83.9%</span>
               </div>
             </div>
           </div>
