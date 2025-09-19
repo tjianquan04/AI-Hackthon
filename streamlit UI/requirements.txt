@@ -1,0 +1,25 @@
+# Streamlit Customer Churn Analytics Dashboard Requirements
+
+# Core Streamlit
+streamlit>=1.28.0
+
+# Data Processing
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Visualization
+plotly>=5.15.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Machine Learning (for potential model integration)
+scikit-learn>=1.3.0
+
+# JSON handling (built-in)
+# json
+
+# File I/O and OS operations (built-in)
+# os
+# sys
+
+
