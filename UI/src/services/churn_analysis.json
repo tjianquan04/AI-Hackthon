@@ -1,0 +1,722 @@
+{
+  "churn_overview": {
+    "overall_churn_rate": {
+      "total_customers": 10127,
+      "churned_customers": 1627,
+      "churn_rate": 0.1606596227905599,
+      "retention_rate": 0.8393403772094401
+    },
+    "churn_by_age": {
+      "<30": {
+        "Total_Customers": 265,
+        "Churned_Count": 32,
+        "Churn_Rate": 0.121
+      },
+      "30-40": {
+        "Total_Customers": 2132,
+        "Churned_Count": 310,
+        "Churn_Rate": 0.145
+      },
+      "40-50": {
+        "Total_Customers": 4652,
+        "Churned_Count": 779,
+        "Churn_Rate": 0.167
+      },
+      "50-60": {
+        "Total_Customers": 2673,
+        "Churned_Count": 448,
+        "Churn_Rate": 0.168
+      },
+      "60+": {
+        "Total_Customers": 405,
+        "Churned_Count": 58,
+        "Churn_Rate": 0.143
+      }
+    },
+    "churn_by_income": {
+      "$120K +": {
+        "Total_Customers": 727,
+        "Churned_Count": 126,
+        "Churn_Rate": 0.173
+      },
+      "$40K - $60K": {
+        "Total_Customers": 1790,
+        "Churned_Count": 271,
+        "Churn_Rate": 0.151
+      },
+      "$60K - $80K": {
+        "Total_Customers": 1402,
+        "Churned_Count": 189,
+        "Churn_Rate": 0.135
+      },
+      "$80K - $120K": {
+        "Total_Customers": 1535,
+        "Churned_Count": 242,
+        "Churn_Rate": 0.158
+      },
+      "Less than $40K": {
+        "Total_Customers": 3561,
+        "Churned_Count": 612,
+        "Churn_Rate": 0.172
+      },
+      "Unknown Income": {
+        "Total_Customers": 1112,
+        "Churned_Count": 187,
+        "Churn_Rate": 0.168
+      }
+    },
+    "churn_by_card_type": {
+      "Blue": {
+        "Total_Customers": 9436,
+        "Churned_Count": 1519,
+        "Churn_Rate": 0.161
+      },
+      "Gold": {
+        "Total_Customers": 116,
+        "Churned_Count": 21,
+        "Churn_Rate": 0.181
+      },
+      "Platinum": {
+        "Total_Customers": 20,
+        "Churned_Count": 5,
+        "Churn_Rate": 0.25
+      },
+      "Silver": {
+        "Total_Customers": 555,
+        "Churned_Count": 82,
+        "Churn_Rate": 0.148
+      }
+    },
+    "churn_by_tenure": {
+      "New (0-12m)": {
+        "Total_Customers": 0,
+        "Churned_Count": 0,
+        "Churn_Rate": null
+      },
+      "Early Stage (13-24m)": {
+        "Total_Customers": 847,
+        "Churned_Count": 126,
+        "Churn_Rate": 0.149
+      },
+      "Mid Stage (25-36m)": {
+        "Total_Customers": 5418,
+        "Churned_Count": 871,
+        "Churn_Rate": 0.161
+      },
+      "Established (37-48m)": {
+        "Total_Customers": 3207,
+        "Churned_Count": 519,
+        "Churn_Rate": 0.162
+      },
+      "Long-term (49m+)": {
+        "Total_Customers": 655,
+        "Churned_Count": 111,
+        "Churn_Rate": 0.169
+      }
+    },
+    "tenure_insights": {
+      "avg_tenure_months": 35.928409203120374,
+      "avg_tenure_churned": 36.178242163491085,
+      "avg_tenure_retained": 35.88058823529412,
+      "newest_customers_churn": null,
+      "longest_customers_churn": 0.169
+    }
+  },
+  "demographics": {
+    "churn_by_gender": {
+      "F": {
+        "Total_Customers": 5358,
+        "Churned_Count": 930,
+        "Churn_Rate": 0.174
+      },
+      "M": {
+        "Total_Customers": 4769,
+        "Churned_Count": 697,
+        "Churn_Rate": 0.146
+      }
+    },
+    "churn_by_education": {
+      "College": {
+        "Total_Customers": 1013,
+        "Churned_Count": 154,
+        "Churn_Rate": 0.152
+      },
+      "Doctorate": {
+        "Total_Customers": 451,
+        "Churned_Count": 95,
+        "Churn_Rate": 0.211
+      },
+      "Graduate": {
+        "Total_Customers": 3128,
+        "Churned_Count": 487,
+        "Churn_Rate": 0.156
+      },
+      "High School": {
+        "Total_Customers": 2013,
+        "Churned_Count": 306,
+        "Churn_Rate": 0.152
+      },
+      "Post-Graduate": {
+        "Total_Customers": 516,
+        "Churned_Count": 92,
+        "Churn_Rate": 0.178
+      },
+      "Uneducated": {
+        "Total_Customers": 1487,
+        "Churned_Count": 237,
+        "Churn_Rate": 0.159
+      },
+      "Unknown Education": {
+        "Total_Customers": 1519,
+        "Churned_Count": 256,
+        "Churn_Rate": 0.169
+      }
+    },
+    "churn_by_marital_status": {
+      "Divorced": {
+        "Total_Customers": 748,
+        "Churned_Count": 121,
+        "Churn_Rate": 0.162
+      },
+      "Married": {
+        "Total_Customers": 4687,
+        "Churned_Count": 709,
+        "Churn_Rate": 0.151
+      },
+      "Single": {
+        "Total_Customers": 3943,
+        "Churned_Count": 668,
+        "Churn_Rate": 0.169
+      },
+      "Unknown Status": {
+        "Total_Customers": 749,
+        "Churned_Count": 129,
+        "Churn_Rate": 0.172
+      }
+    },
+    "age_distribution_stats": {
+      "Retained": {
+        "mean": 46.26,
+        "median": 46.0,
+        "std": 8.08
+      },
+      "Churned": {
+        "mean": 46.66,
+        "median": 47.0,
+        "std": 7.67
+      }
+    }
+  },
+  "product_engagement": {
+    "churn_by_relationship_count": {
+      "1": {
+        "Total_Customers": 910,
+        "Churned_Count": 233,
+        "Churn_Rate": 0.256
+      },
+      "2": {
+        "Total_Customers": 1243,
+        "Churned_Count": 346,
+        "Churn_Rate": 0.278
+      },
+      "3": {
+        "Total_Customers": 2305,
+        "Churned_Count": 400,
+        "Churn_Rate": 0.174
+      },
+      "4": {
+        "Total_Customers": 1912,
+        "Churned_Count": 225,
+        "Churn_Rate": 0.118
+      },
+      "5": {
+        "Total_Customers": 1891,
+        "Churned_Count": 227,
+        "Churn_Rate": 0.12
+      },
+      "6": {
+        "Total_Customers": 1866,
+        "Churned_Count": 196,
+        "Churn_Rate": 0.105
+      }
+    },
+    "churn_by_product_engagement": {
+      "Low (1-2)": {
+        "Total_Customers": 2153,
+        "Churned_Count": 579,
+        "Churn_Rate": 0.269
+      },
+      "Medium (3-4)": {
+        "Total_Customers": 4217,
+        "Churned_Count": 625,
+        "Churn_Rate": 0.148
+      },
+      "High (5+)": {
+        "Total_Customers": 3757,
+        "Churned_Count": 423,
+        "Churn_Rate": 0.113
+      }
+    }
+  },
+  "customer_activity": {
+    "churn_by_months_inactive": {
+      "0": {
+        "Total_Customers": 29,
+        "Churned_Count": 15,
+        "Churn_Rate": 0.517
+      },
+      "1": {
+        "Total_Customers": 2233,
+        "Churned_Count": 100,
+        "Churn_Rate": 0.045
+      },
+      "2": {
+        "Total_Customers": 3282,
+        "Churned_Count": 505,
+        "Churn_Rate": 0.154
+      },
+      "3": {
+        "Total_Customers": 3846,
+        "Churned_Count": 826,
+        "Churn_Rate": 0.215
+      },
+      "4": {
+        "Total_Customers": 435,
+        "Churned_Count": 130,
+        "Churn_Rate": 0.299
+      },
+      "5": {
+        "Total_Customers": 178,
+        "Churned_Count": 32,
+        "Churn_Rate": 0.18
+      },
+      "6": {
+        "Total_Customers": 124,
+        "Churned_Count": 19,
+        "Churn_Rate": 0.153
+      }
+    },
+    "churn_by_service_contacts": {
+      "0": {
+        "Total_Customers": 399,
+        "Churned_Count": 7,
+        "Churn_Rate": 0.018
+      },
+      "1": {
+        "Total_Customers": 1499,
+        "Churned_Count": 108,
+        "Churn_Rate": 0.072
+      },
+      "2": {
+        "Total_Customers": 3227,
+        "Churned_Count": 403,
+        "Churn_Rate": 0.125
+      },
+      "3": {
+        "Total_Customers": 3380,
+        "Churned_Count": 681,
+        "Churn_Rate": 0.201
+      },
+      "4": {
+        "Total_Customers": 1392,
+        "Churned_Count": 315,
+        "Churn_Rate": 0.226
+      },
+      "5": {
+        "Total_Customers": 176,
+        "Churned_Count": 59,
+        "Churn_Rate": 0.335
+      },
+      "6": {
+        "Total_Customers": 54,
+        "Churned_Count": 54,
+        "Churn_Rate": 1.0
+      }
+    },
+    "churn_by_transaction_volume": {
+      "Low": {
+        "Total_Customers": 2532,
+        "Churned_Count": 618,
+        "Churn_Rate": 0.244
+      },
+      "Medium": {
+        "Total_Customers": 2532,
+        "Churned_Count": 697,
+        "Churn_Rate": 0.275
+      },
+      "High": {
+        "Total_Customers": 2534,
+        "Churned_Count": 22,
+        "Churn_Rate": 0.009
+      },
+      "Very High": {
+        "Total_Customers": 2529,
+        "Churned_Count": 290,
+        "Churn_Rate": 0.115
+      }
+    },
+    "churn_by_transaction_count": {
+      "Low": {
+        "Total_Customers": 2611,
+        "Churned_Count": 968,
+        "Churn_Rate": 0.371
+      },
+      "Medium": {
+        "Total_Customers": 2512,
+        "Churned_Count": 514,
+        "Churn_Rate": 0.205
+      },
+      "High": {
+        "Total_Customers": 2662,
+        "Churned_Count": 119,
+        "Churn_Rate": 0.045
+      },
+      "Very High": {
+        "Total_Customers": 2342,
+        "Churned_Count": 26,
+        "Churn_Rate": 0.011
+      }
+    },
+    "churn_by_transaction_change": {
+      "Declining": {
+        "Total_Customers": 1524,
+        "Churned_Count": 748,
+        "Churn_Rate": 0.491
+      },
+      "Stable": {
+        "Total_Customers": 7928,
+        "Churned_Count": 830,
+        "Churn_Rate": 0.105
+      },
+      "Growing": {
+        "Total_Customers": 587,
+        "Churned_Count": 39,
+        "Churn_Rate": 0.066
+      },
+      "High Growth": {
+        "Total_Customers": 81,
+        "Churned_Count": 3,
+        "Churn_Rate": 0.037
+      }
+    }
+  },
+  "financial_behavior": {
+    "churn_by_credit_limit": {
+      "Low": {
+        "Total_Customers": 2535,
+        "Churned_Count": 517,
+        "Churn_Rate": 0.204
+      },
+      "Medium": {
+        "Total_Customers": 2531,
+        "Churned_Count": 354,
+        "Churn_Rate": 0.14
+      },
+      "High": {
+        "Total_Customers": 2529,
+        "Churned_Count": 387,
+        "Churn_Rate": 0.153
+      },
+      "Premium": {
+        "Total_Customers": 2532,
+        "Churned_Count": 369,
+        "Churn_Rate": 0.146
+      }
+    },
+    "churn_by_revolving_balance": {
+      "None/Low": {
+        "Total_Customers": 126,
+        "Churned_Count": 106,
+        "Churn_Rate": 0.841
+      },
+      "Medium": {
+        "Total_Customers": 3575,
+        "Churned_Count": 265,
+        "Churn_Rate": 0.074
+      },
+      "High": {
+        "Total_Customers": 3956,
+        "Churned_Count": 363,
+        "Churn_Rate": 0.092
+      },
+      "Very High": {
+        "Total_Customers": 0,
+        "Churned_Count": 0,
+        "Churn_Rate": null
+      }
+    },
+    "churn_by_utilization": {
+      "Very Low": {
+        "Total_Customers": 1583,
+        "Churned_Count": 176,
+        "Churn_Rate": 0.111
+      },
+      "Low": {
+        "Total_Customers": 2200,
+        "Churned_Count": 209,
+        "Churn_Rate": 0.095
+      },
+      "Medium": {
+        "Total_Customers": 2815,
+        "Churned_Count": 212,
+        "Churn_Rate": 0.075
+      },
+      "High": {
+        "Total_Customers": 1059,
+        "Churned_Count": 137,
+        "Churn_Rate": 0.129
+      }
+    },
+    "churn_by_available_credit": {
+      "Low": {
+        "Total_Customers": 2532,
+        "Churned_Count": 236,
+        "Churn_Rate": 0.093
+      },
+      "Medium": {
+        "Total_Customers": 2532,
+        "Churned_Count": 576,
+        "Churn_Rate": 0.227
+      },
+      "High": {
+        "Total_Customers": 2531,
+        "Churned_Count": 430,
+        "Churn_Rate": 0.17
+      },
+      "Very High": {
+        "Total_Customers": 2532,
+        "Churned_Count": 385,
+        "Churn_Rate": 0.152
+      }
+    }
+  },
+  "customer_value": {
+    "churn_by_customer_value": {
+      "Low Value": {
+        "Total_Customers": 2532,
+        "Churned_Count": 843,
+        "Churn_Rate": 0.333
+      },
+      "Medium Value": {
+        "Total_Customers": 2532,
+        "Churned_Count": 377,
+        "Churn_Rate": 0.149
+      },
+      "High Value": {
+        "Total_Customers": 2531,
+        "Churned_Count": 108,
+        "Churn_Rate": 0.043
+      },
+      "Premium Value": {
+        "Total_Customers": 2532,
+        "Churned_Count": 299,
+        "Churn_Rate": 0.118
+      }
+    },
+    "high_value_churn_stats": {
+      "total_high_value": 5063,
+      "churned_high_value": 407,
+      "high_value_churn_rate": 0.08038712225952992,
+      "revenue_at_risk_pct": 0.08038712225952992
+    },
+    "churn_by_card_income": {
+      "Blue_$120K +": {
+        "Card_Category": "Blue",
+        "Income_Category": "$120K +",
+        "Customer_Count": 645.0,
+        "Churn_Rate": 0.175
+      },
+      "Blue_$40K - $60K": {
+        "Card_Category": "Blue",
+        "Income_Category": "$40K - $60K",
+        "Customer_Count": 1675.0,
+        "Churn_Rate": 0.153
+      },
+      "Blue_$60K - $80K": {
+        "Card_Category": "Blue",
+        "Income_Category": "$60K - $80K",
+        "Customer_Count": 1273.0,
+        "Churn_Rate": 0.135
+      },
+      "Blue_$80K - $120K": {
+        "Card_Category": "Blue",
+        "Income_Category": "$80K - $120K",
+        "Customer_Count": 1395.0,
+        "Churn_Rate": 0.154
+      },
+      "Blue_Less than $40K": {
+        "Card_Category": "Blue",
+        "Income_Category": "Less than $40K",
+        "Customer_Count": 3403.0,
+        "Churn_Rate": 0.172
+      },
+      "Blue_Unknown Income": {
+        "Card_Category": "Blue",
+        "Income_Category": "Unknown Income",
+        "Customer_Count": 1045.0,
+        "Churn_Rate": 0.168
+      },
+      "Gold_$120K +": {
+        "Card_Category": "Gold",
+        "Income_Category": "$120K +",
+        "Customer_Count": 18.0,
+        "Churn_Rate": 0.111
+      },
+      "Gold_$40K - $60K": {
+        "Card_Category": "Gold",
+        "Income_Category": "$40K - $60K",
+        "Customer_Count": 15.0,
+        "Churn_Rate": 0.133
+      },
+      "Gold_$60K - $80K": {
+        "Card_Category": "Gold",
+        "Income_Category": "$60K - $80K",
+        "Customer_Count": 29.0,
+        "Churn_Rate": 0.207
+      },
+      "Gold_$80K - $120K": {
+        "Card_Category": "Gold",
+        "Income_Category": "$80K - $120K",
+        "Customer_Count": 21.0,
+        "Churn_Rate": 0.238
+      },
+      "Gold_Less than $40K": {
+        "Card_Category": "Gold",
+        "Income_Category": "Less than $40K",
+        "Customer_Count": 24.0,
+        "Churn_Rate": 0.167
+      },
+      "Gold_Unknown Income": {
+        "Card_Category": "Gold",
+        "Income_Category": "Unknown Income",
+        "Customer_Count": 9.0,
+        "Churn_Rate": 0.222
+      },
+      "Platinum_$120K +": {
+        "Card_Category": "Platinum",
+        "Income_Category": "$120K +",
+        "Customer_Count": 4.0,
+        "Churn_Rate": 0.0
+      },
+      "Platinum_$40K - $60K": {
+        "Card_Category": "Platinum",
+        "Income_Category": "$40K - $60K",
+        "Customer_Count": 1.0,
+        "Churn_Rate": 1.0
+      },
+      "Platinum_$60K - $80K": {
+        "Card_Category": "Platinum",
+        "Income_Category": "$60K - $80K",
+        "Customer_Count": 4.0,
+        "Churn_Rate": 0.0
+      },
+      "Platinum_$80K - $120K": {
+        "Card_Category": "Platinum",
+        "Income_Category": "$80K - $120K",
+        "Customer_Count": 2.0,
+        "Churn_Rate": 0.0
+      },
+      "Platinum_Less than $40K": {
+        "Card_Category": "Platinum",
+        "Income_Category": "Less than $40K",
+        "Customer_Count": 4.0,
+        "Churn_Rate": 0.5
+      },
+      "Platinum_Unknown Income": {
+        "Card_Category": "Platinum",
+        "Income_Category": "Unknown Income",
+        "Customer_Count": 5.0,
+        "Churn_Rate": 0.4
+      },
+      "Silver_$120K +": {
+        "Card_Category": "Silver",
+        "Income_Category": "$120K +",
+        "Customer_Count": 60.0,
+        "Churn_Rate": 0.183
+      },
+      "Silver_$40K - $60K": {
+        "Card_Category": "Silver",
+        "Income_Category": "$40K - $60K",
+        "Customer_Count": 99.0,
+        "Churn_Rate": 0.111
+      },
+      "Silver_$60K - $80K": {
+        "Card_Category": "Silver",
+        "Income_Category": "$60K - $80K",
+        "Customer_Count": 96.0,
+        "Churn_Rate": 0.115
+      },
+      "Silver_$80K - $120K": {
+        "Card_Category": "Silver",
+        "Income_Category": "$80K - $120K",
+        "Customer_Count": 117.0,
+        "Churn_Rate": 0.188
+      },
+      "Silver_Less than $40K": {
+        "Card_Category": "Silver",
+        "Income_Category": "Less than $40K",
+        "Customer_Count": 130.0,
+        "Churn_Rate": 0.154
+      },
+      "Silver_Unknown Income": {
+        "Card_Category": "Silver",
+        "Income_Category": "Unknown Income",
+        "Customer_Count": 53.0,
+        "Churn_Rate": 0.132
+      }
+    }
+  },
+  "churn_drivers": {
+    "top_numerical_drivers": {
+      "Total_Trans_Ct": 0.37140270118892665,
+      "Total_Revolving_Bal": 0.2630528831292026,
+      "Contacts_Count_12_mon": 0.20449050998160492,
+      "Avg_Utilization_Ratio": 0.1784103315617484,
+      "Total_Trans_Amt": 0.16859838141007918,
+      "Months_Inactive_12_mon": 0.15244880632692606,
+      "Total_Relationship_Count": 0.15000522801913765,
+      "Credit_Limit": 0.023872994836161957,
+      "Dependent_count": 0.01899059631119395,
+      "Customer_Age": 0.01820313853255016
+    },
+    "key_insights": [
+      {
+        "category": "Inactivity Risk",
+        "insight": "Customers inactive for 3+ months have 22.0% churn rate",
+        "risk_level": "Medium"
+      },
+      {
+        "category": "Service Issues",
+        "insight": "Customers with 4+ service contacts have 26.4% churn rate",
+        "risk_level": "High"
+      },
+      {
+        "category": "Financial Stress",
+        "insight": "High utilization customers (>70%) have 12.9% churn rate",
+        "risk_level": "Medium"
+      },
+      {
+        "category": "Engagement Decline",
+        "insight": "Customers with declining transactions have 50.9% churn rate",
+        "risk_level": "High"
+      }
+    ]
+  },
+  "summary_kpis": {
+    "kpi_metrics": {
+      "total_customers": 10127,
+      "churned_customers": 1627,
+      "overall_churn_rate": 0.1606596227905599,
+      "retention_rate": 0.8393403772094401,
+      "avg_customer_age": 46.32596030413745,
+      "avg_tenure_months": 35.928409203120374,
+      "avg_credit_limit": 8631.953698034955,
+      "avg_transaction_amount": 4404.086303939963
+    },
+    "risk_segments": {
+      "high_risk_customers": 5900,
+      "medium_risk_customers": 6729,
+      "low_risk_customers": 890
+    }
+  }
+}

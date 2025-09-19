@@ -1,63 +1,97 @@
-import React from 'react';
-import { TrendingUp, TrendingDown, Users, DollarSign } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { TrendingUp, TrendingDown, Users, DollarSign, AlertTriangle, Shield } from 'lucide-react';
+import { dashboardData } from '../services/dashboardData';
 
-const KPICard = ({ title, value, subtitle, icon: Icon, trend, trendValue, color }) => {
+const KPICard = ({ title, value, subtitle, icon: Icon, trend, trendValue, color, gradient }) => {
   return (
-    <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-      <div className="flex items-center justify-between mb-4">
-        <div className={`p-2 rounded-lg ${color}`}>
-          <Icon className="w-6 h-6 text-white" />
-        </div>
-        {trend && (
-          <div className={`flex items-center text-sm ${trend === 'up' ? 'text-red-500' : 'text-green-500'}`}>
-            {trend === 'up' ? <TrendingUp className="w-4 h-4 mr-1" /> : <TrendingDown className="w-4 h-4 mr-1" />}
-            {trendValue}
+    <div className={`relative overflow-hidden rounded-2xl shadow-xl border border-white/20 p-8 hover:shadow-2xl transition-all duration-500 hover:scale-105 ${gradient || 'bg-white/80 backdrop-blur-sm'}`}>
+      {/* Background Pattern */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
+      
+      <div className="relative">
+        <div className="flex items-center justify-between mb-6">
+          <div className={`p-4 rounded-2xl shadow-lg ${color} transform transition-transform hover:scale-110`}>
+            <Icon className="w-8 h-8 text-white" />
           </div>
-        )}
-      </div>
-      <div>
-        <div className="text-3xl font-bold text-gray-900 mb-1">{value}</div>
-        <div className="text-sm text-gray-600">{title}</div>
-        {subtitle && <div className="text-xs text-gray-500 mt-1">{subtitle}</div>}
+          {trend && (
+            <div className={`flex items-center px-3 py-2 rounded-full text-sm font-medium ${
+              trend === 'up' ? 'text-red-700 bg-red-100' : 'text-green-700 bg-green-100'
+            }`}>
+              {trend === 'up' ? <TrendingUp className="w-4 h-4 mr-1" /> : <TrendingDown className="w-4 h-4 mr-1" />}
+              {trendValue}
+            </div>
+          )}
+        </div>
+        
+        <div>
+          <div className="text-4xl font-bold text-gray-900 mb-2 tracking-tight">{value}</div>
+          <div className="text-lg font-semibold text-gray-700 mb-1">{title}</div>
+          {subtitle && <div className="text-sm text-gray-600 font-medium">{subtitle}</div>}
+        </div>
       </div>
     </div>
   );
 };
 
 const KPICards = () => {
+  const [metrics, setMetrics] = useState(null);
+
+  useEffect(() => {
+    const kpiData = dashboardData.getKPIMetrics();
+    setMetrics(kpiData);
+  }, []);
+
+  if (!metrics) {
+    return (
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {[1, 2, 3, 4].map(i => (
+          <div key={i} className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 animate-pulse">
+            <div className="w-full h-20 bg-gray-200 rounded"></div>
+          </div>
+        ))}
+      </div>
+    );
+  }
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
       <KPICard
-        title="Risky Customers"
-        value="23423"
+        title="Total Customers"
+        value={metrics.totalCustomers.toLocaleString()}
+        subtitle={`Avg Age: ${metrics.avgCustomerAge} years`}
         icon={Users}
-        color="bg-red-500"
-        trend="up"
-        trendValue="12.5%"
+        color="bg-gradient-to-r from-blue-500 to-blue-600"
+        gradient="bg-gradient-to-br from-blue-50 to-indigo-100"
       />
       <KPICard
-        title="Impacted Revenue From Risky Cohorts"
-        value="$53.2M"
-        icon={DollarSign}
-        color="bg-orange-500"
+        title="Churned Customers"
+        value={metrics.churnedCustomers.toLocaleString()}
+        subtitle="Lost customers"
+        icon={AlertTriangle}
+        color="bg-gradient-to-r from-red-500 to-red-600"
+        gradient="bg-gradient-to-br from-red-50 to-pink-100"
         trend="up"
-        trendValue="8.3%"
+        trendValue={`${metrics.churnRate}%`}
       />
       <KPICard
-        title="Average Churn Rate"
-        value="14.2%"
+        title="Churn Rate"
+        value={`${metrics.churnRate}%`}
+        subtitle={`${metrics.retentionRate}% retained`}
         icon={TrendingDown}
-        color="bg-blue-500"
-        trend="down"
-        trendValue="2.1%"
+        color="bg-gradient-to-r from-orange-500 to-red-500"
+        gradient="bg-gradient-to-br from-orange-50 to-red-100"
+        trend="up"
+        trendValue="Above target"
       />
       <KPICard
-        title="Impacted Revenue From Low Churn Risk Customers"
-        value="$12.2M"
-        icon={DollarSign}
-        color="bg-green-500"
-        trend="down"
-        trendValue="5.7%"
+        title="High-Risk Customers"
+        value={metrics.highRiskCustomers.toLocaleString()}
+        subtitle="Requiring attention"
+        icon={Shield}
+        color="bg-gradient-to-r from-yellow-500 to-orange-500"
+        gradient="bg-gradient-to-br from-yellow-50 to-orange-100"
+        trend="up"
+        trendValue="Priority"
       />
     </div>
   );
