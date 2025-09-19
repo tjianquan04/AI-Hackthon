@@ -176,16 +176,20 @@ class DashboardDataService:
         """Get card category data"""
         churn_by_card = self.get_churn_overview().get('churn_by_card_type', {})
         
-        card_categories = []
-        for card_type, data in churn_by_card.items():
-            card_categories.append({
-                'cardCategory': card_type,
-                'totalCustomers': data.get('Total_Customers', 0),
-                'churnedCustomers': data.get('Churned_Count', 0),
-                'churnRate': round(data.get('Churn_Rate', 0) * 100, 1)
-            })
+        labels = []
+        customer_counts = []
+        churn_rates = []
         
-        return {'cardCategories': card_categories}
+        for card_type, data in churn_by_card.items():
+            labels.append(card_type)
+            customer_counts.append(data.get('Total_Customers', 0))
+            churn_rates.append(round(data.get('Churn_Rate', 0) * 100, 1))
+        
+        return {
+            'labels': labels,
+            'customer_counts': customer_counts,
+            'churn_rates': churn_rates
+        }
 
     def get_activity_chart_data(self) -> Dict[str, Any]:
         """Get activity data for charts"""
@@ -193,29 +197,29 @@ class DashboardDataService:
         
         # Process contact data
         contacts_data = activity_data.get('churn_by_service_contacts', {})
-        contact_analysis = []
+        contact_labels = []
+        contact_churn_rates = []
         for contacts, data in contacts_data.items():
-            contact_analysis.append({
-                'contacts': contacts,
-                'totalCustomers': data.get('Total_Customers', 0),
-                'churnedCustomers': data.get('Churned_Count', 0),
-                'churnRate': round(data.get('Churn_Rate', 0) * 100, 1)
-            })
+            contact_labels.append(contacts)
+            contact_churn_rates.append(round(data.get('Churn_Rate', 0) * 100, 1))
         
         # Process inactive months data
         inactive_data = activity_data.get('churn_by_months_inactive', {})
-        inactive_analysis = []
+        inactive_labels = []
+        inactive_churn_rates = []
         for months, data in inactive_data.items():
-            inactive_analysis.append({
-                'monthsInactive': months,
-                'totalCustomers': data.get('Total_Customers', 0),
-                'churnedCustomers': data.get('Churned_Count', 0),
-                'churnRate': round(data.get('Churn_Rate', 0) * 100, 1)
-            })
+            inactive_labels.append(months)
+            inactive_churn_rates.append(round(data.get('Churn_Rate', 0) * 100, 1))
         
         return {
-            'contactAnalysis': contact_analysis,
-            'inactiveAnalysis': inactive_analysis
+            'inactivity': {
+                'labels': inactive_labels,
+                'data': inactive_churn_rates
+            },
+            'service_contacts': {
+                'labels': contact_labels,
+                'data': contact_churn_rates
+            }
         }
 
     def get_financial_chart_data(self) -> Dict[str, Any]:
@@ -224,29 +228,29 @@ class DashboardDataService:
         
         # Process credit limit data
         credit_data = financial_data.get('churn_by_credit_limit', {})
-        credit_analysis = []
+        credit_labels = []
+        credit_churn_rates = []
         for category, data in credit_data.items():
-            credit_analysis.append({
-                'creditCategory': category,
-                'totalCustomers': data.get('Total_Customers', 0),
-                'churnedCustomers': data.get('Churned_Count', 0),
-                'churnRate': round(data.get('Churn_Rate', 0) * 100, 1)
-            })
+            credit_labels.append(category)
+            credit_churn_rates.append(round(data.get('Churn_Rate', 0) * 100, 1))
         
         # Process utilization data
         utilization_data = financial_data.get('churn_by_utilization', {})
-        utilization_analysis = []
+        utilization_labels = []
+        utilization_churn_rates = []
         for category, data in utilization_data.items():
-            utilization_analysis.append({
-                'utilizationCategory': category,
-                'totalCustomers': data.get('Total_Customers', 0),
-                'churnedCustomers': data.get('Churned_Count', 0),
-                'churnRate': round(data.get('Churn_Rate', 0) * 100, 1)
-            })
+            utilization_labels.append(category)
+            utilization_churn_rates.append(round(data.get('Churn_Rate', 0) * 100, 1))
         
         return {
-            'creditAnalysis': credit_analysis,
-            'utilizationAnalysis': utilization_analysis
+            'utilization': {
+                'labels': utilization_labels,
+                'data': utilization_churn_rates
+            },
+            'credit_limit': {
+                'labels': credit_labels,
+                'data': credit_churn_rates
+            }
         }
 
     def get_customer_segments(self) -> Dict[str, Any]:
@@ -297,17 +301,17 @@ class DashboardDataService:
         """Get tenure analysis data"""
         churn_by_tenure = self.get_churn_overview().get('churn_by_tenure', {})
         
-        tenure_groups = []
+        chart_data = []
         for group, data in churn_by_tenure.items():
             if data.get('Total_Customers', 0) > 0:  # Skip empty groups
-                tenure_groups.append({
-                    'tenureGroup': group,
-                    'totalCustomers': data.get('Total_Customers', 0),
-                    'churnedCustomers': data.get('Churned_Count', 0),
-                    'churnRate': round(data.get('Churn_Rate', 0) * 100, 1) if data.get('Churn_Rate') else 0
+                chart_data.append({
+                    'name': group,
+                    'customers': data.get('Total_Customers', 0),
+                    'churned': data.get('Churned_Count', 0),
+                    'churn_rate': round(data.get('Churn_Rate', 0) * 100, 1) if data.get('Churn_Rate') else 0
                 })
         
-        return {'tenureGroups': tenure_groups}
+        return {'chart_data': chart_data}
 
     def get_widget_data(self, widget_type: str) -> Optional[Dict[str, Any]]:
         """Get data for specific dashboard widgets"""

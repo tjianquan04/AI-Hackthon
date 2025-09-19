@@ -229,9 +229,9 @@ def render_customer_analytics(df):
                 fig_income.update_layout(
                     xaxis_title="Income Category",
                     yaxis_title="Number of Customers",
-                    showlegend=False
+                    showlegend=False,
+                    xaxis=dict(tickangle=45)
                 )
-                fig_income.update_xaxis(tickangle=45)
                 
                 st.plotly_chart(fig_income, use_container_width=True)
         

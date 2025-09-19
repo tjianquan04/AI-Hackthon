@@ -35,10 +35,9 @@ def render_income_analysis():
         xaxis_title="Income Category",
         yaxis_title="Churn Rate (%)",
         showlegend=False,
-        height=400
+        height=400,
+        xaxis=dict(tickangle=45)
     )
-    
-    fig.update_xaxis(tickangle=45)
     
     st.plotly_chart(fig, use_container_width=True)
     
@@ -231,8 +230,7 @@ def render_financial_analysis():
             color_continuous_scale='Blues'
         )
         
-        fig_util.update_layout(height=300, showlegend=False)
-        fig_util.update_xaxis(tickangle=45)
+        fig_util.update_layout(height=300, showlegend=False, xaxis=dict(tickangle=45))
         st.plotly_chart(fig_util, use_container_width=True)
     
     with col2:
@@ -253,8 +251,7 @@ def render_financial_analysis():
             color_continuous_scale='Greens'
         )
         
-        fig_credit.update_layout(height=300, showlegend=False)
-        fig_credit.update_xaxis(tickangle=45)
+        fig_credit.update_layout(height=300, showlegend=False, xaxis=dict(tickangle=45))
         st.plotly_chart(fig_credit, use_container_width=True)
 
 def render_tenure_analysis():
