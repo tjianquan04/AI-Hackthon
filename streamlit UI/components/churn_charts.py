@@ -35,8 +35,22 @@ def render_income_analysis():
         xaxis_title="Income Category",
         yaxis_title="Churn Rate (%)",
         showlegend=False,
-        height=400,
-        xaxis=dict(tickangle=45)
+        height=450,
+        margin=dict(l=60, r=40, t=80, b=120),
+        xaxis=dict(
+            tickangle=45,
+            tickfont=dict(size=10),
+            automargin=True
+        ),
+        yaxis=dict(
+            tickfont=dict(size=10),
+            automargin=True
+        ),
+        title=dict(
+            font=dict(size=14),
+            x=0.5,
+            xanchor='center'
+        )
     )
     
     st.plotly_chart(fig, use_container_width=True)
@@ -50,10 +64,14 @@ def render_income_analysis():
         income_data['customer_counts']
     )):
         with [col1, col2, col3, col4][i % 4]:
+            # Truncate long labels for display
+            display_label = income.replace('$', '').replace(' +', '+')
+            if len(display_label) > 12:
+                display_label = display_label[:9] + "..."
             st.metric(
-                label=income.replace('$', '').replace(' +', '+'),
+                label=display_label,
                 value=f"{churn_rate:.1f}%",
-                help=f"{customers:,} customers"
+                help=f"{income}: {customers:,} customers"
             )
 
 def render_age_analysis():
@@ -97,12 +115,19 @@ def render_age_analysis():
     
     # Update layout
     fig.update_layout(
-        title='Churn Rate and Customer Distribution by Age',
-        xaxis=dict(title='Age Group'),
-        yaxis=dict(title='Churn Rate (%)', side='left'),
-        yaxis2=dict(title='Total Customers', side='right', overlaying='y'),
-        height=400,
-        hovermode='x'
+        title=dict(
+            text='Churn Rate and Customer Distribution by Age',
+            font=dict(size=14),
+            x=0.5,
+            xanchor='center'
+        ),
+        xaxis=dict(title='Age Group', tickfont=dict(size=10), automargin=True),
+        yaxis=dict(title='Churn Rate (%)', side='left', tickfont=dict(size=10), automargin=True),
+        yaxis2=dict(title='Total Customers', side='right', overlaying='y', tickfont=dict(size=10), automargin=True),
+        height=450,
+        margin=dict(l=60, r=80, t=80, b=60),
+        hovermode='x',
+        legend=dict(x=0, y=1, bgcolor='rgba(255,255,255,0.8)')
     )
     
     st.plotly_chart(fig, use_container_width=True)

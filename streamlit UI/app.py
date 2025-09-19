@@ -87,6 +87,35 @@ def configure_page():
         border-radius: 12px;
         padding: 1rem;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        min-height: 400px;
+    }
+    
+    /* Responsive chart containers */
+    .stPlotlyChart > div {
+        width: 100% !important;
+        height: auto !important;
+        overflow: hidden;
+    }
+    
+    /* Fix text wrapping and overflow */
+    .stMarkdown, .stText {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        white-space: normal;
+    }
+    
+    /* Responsive columns */
+    .row-widget.stHorizontal {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    .row-widget.stHorizontal > div {
+        flex: 1;
+        min-width: 200px;
+        padding: 0.25rem;
     }
     
     /* Sidebar styling */
@@ -242,7 +271,7 @@ def configure_page():
     """, unsafe_allow_html=True)
 
 def render_sidebar():
-    """Render the enhanced sidebar navigation"""
+    """Render sidebar with features info only (no navigation)"""
     with st.sidebar:
         # Enhanced sidebar header
         st.markdown("""
@@ -251,16 +280,6 @@ def render_sidebar():
             <p style='color: #94a3b8; margin: 0.5rem 0 0 0; font-size: 0.85rem;'>AI-Powered Insights</p>
         </div>
         """, unsafe_allow_html=True)
-        
-        st.markdown("---")
-        
-        # Enhanced Navigation
-        st.markdown("### 📍 Navigation")
-        page = st.selectbox(
-            "Choose a view:",
-            options=["Dashboard", "Customer Database", "Predictions"],
-            index=0
-        )
         
         st.markdown("---")
         
@@ -311,7 +330,7 @@ def render_sidebar():
         </div>
         """, unsafe_allow_html=True)
         
-    return page
+    return None
 
 def render_dashboard():
     """Render the main dashboard page"""
@@ -410,16 +429,11 @@ def main():
     # Configure page
     configure_page()
     
-    # Render sidebar and get selected page
-    selected_page = render_sidebar()
+    # Render sidebar (no navigation)
+    render_sidebar()
     
-    # Route to appropriate page
-    if selected_page == "Dashboard":
-        render_dashboard()
-    elif selected_page == "Customer Database":
-        render_customer_page()
-    elif selected_page == "Predictions":
-        render_predictions_page()
+    # Default to Dashboard view only
+    render_dashboard()
     
     # Enhanced Footer
     st.markdown("""
