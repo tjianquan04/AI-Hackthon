@@ -2,10 +2,10 @@ import pandas as pd
 import joblib
 
 # Load model
-pipeline = joblib.load("D:\\AI Hackathon\\models\\best_model.pkl")
+pipeline = joblib.load("../models/best_model.pkl")
 
 # Load new customers dataset
-new_customers = pd.read_csv("D:\\AI Hackathon\\data\\new_customers.csv")
+new_customers = pd.read_csv("../data/new_customers.csv")
 
 # Predict churn probabilities
 probs = pipeline.predict_proba(new_customers)[:, 1]
